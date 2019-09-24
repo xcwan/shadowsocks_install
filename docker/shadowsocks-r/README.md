@@ -16,7 +16,15 @@ If you need to install docker by yourself, follow the [official installation gui
 $ docker pull teddysun/shadowsocks-r
 ```
 
-This pulls the latest release of shadowsocks-libev.
+or pull image based **alpine**
+
+```bash
+$ docker pull teddysun/shadowsocks-r:alpine
+```
+
+
+This pulls the latest release of shadowsocks-r.
+
 It can be found at [Docker Hub][5].
 
 ## Start a container
@@ -45,10 +53,17 @@ You **must create a configuration file**  `/etc/shadowsocks-r/config.json` in ho
 ```
 
 This container with sample configuration `/etc/shadowsocks-r/config.json`
+
 There is an example to start a container that listens on `9000` (both TCP and UDP):
 
 ```bash
 $ docker run -d -p 9000:9000 -p 9000:9000/udp --name ssr -v /etc/shadowsocks-r:/etc/shadowsocks-r teddysun/shadowsocks-r
+```
+
+There is an example to start a container based **alpine** that listens on `9000` (both TCP and UDP):
+
+```bash
+$ docker run -d -p 9000:9000 -p 9000:9000/udp --name ssr -v /etc/shadowsocks-r:/etc/shadowsocks-r teddysun/shadowsocks-r:alpine
 ```
 
 **Note**: The port number must be same as configuration.

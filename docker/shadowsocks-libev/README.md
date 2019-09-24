@@ -16,7 +16,7 @@ If you need to install docker by yourself, follow the [official installation gui
 $ docker pull teddysun/shadowsocks-libev
 ```
 
-or pull image based *alpine*
+or pull image based **alpine**
 
 ```bash
 $ docker pull teddysun/shadowsocks-libev:alpine
@@ -62,10 +62,17 @@ and if you want to enable **simple-obfs**, configuration file `/etc/shadowsocks-
 ```
 
 This container with sample configuration `/etc/shadowsocks-libev/config.json`
+
 There is an example to start a container that listens on `9000` (both TCP and UDP):
 
 ```bash
 $ docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /etc/shadowsocks-libev:/etc/shadowsocks-libev teddysun/shadowsocks-libev
+```
+
+There is an example to start a container based **alpine** that listens on `9000` (both TCP and UDP):
+
+```bash
+$ docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /etc/shadowsocks-libev:/etc/shadowsocks-libev teddysun/shadowsocks-libev:alpine
 ```
 
 **Note**: The port number must be same as configuration.
